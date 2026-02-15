@@ -1,0 +1,273 @@
+# polymorphism :- 
+# In Python, polymorphism is a core concept of Object-Oriented 
+# Programming (OOP) that allows different objects to be treated as 
+# instances of the same general class through the same interface.
+
+# The word itself comes from Greek: poly (many) and morph (forms).
+#  In short, it’s the ability of a single function, method, or symbol to behave 
+# differently depending on the "form" (data type) it is acting upon.
+# ------
+# Polymorphism in Python is the ability of an object,
+# function, or operator to take on multiple forms or behave differently 
+# depending on the specific data type or class it is operating on.
+
+#  types of polymorphism in python include:
+
+# method overloading
+#  :- same name of the method (function ) but different parameters.
+
+# method overriding 
+
+
+# method overloading (is  not using python) :-
+# Python does not support method overloading in the traditional sense (as found in statically typed languages like Java or C++)
+# primarily due to its dynamic typing and the way it manages namespaces. 
+
+
+# duck typing
+
+
+# 2 . method overiding :-
+
+# class animal:
+#     # make sound method
+#     def make_sound(self):
+#         print('animal makes sound!')
+# #inherited the animal class into the dog
+# class dog(animal):
+#     #here we have defined the same name method into this dog class although the make sound is defined 
+#     #into the parent class.. but the make sound methods is also defined into this dog class then it wll 
+#     #override the above class method.
+#     def make_sound(self):
+#         print('dog barks!') 
+# class cat(animal):
+#     def make_sound(self):
+#         print('cat meows!')
+
+# dog = dog()
+# cat = cat()
+# cat.make_sound()  
+
+
+#---------------
+# class shape:
+#     def area(self):
+#         print('the shape has some area!')
+# class circle(shape):
+#     def area(self,radius):
+#         result = 3.14*radius**2
+#         print(result)
+# class square(shape):
+#     def area(self,side):
+#         result = side ** 2
+#         print(result)
+# circle = circle()
+# sq = square()
+# sq.area(4)
+# circle.area(1)
+
+
+# -----
+# create a parent class person with method introduce and overirde with it student and teacher
+# class person: # Parent Class
+#     def introduce(self):
+#         print("hello, i am person")
+
+# class student(person):# Child Class - Student
+#     def introduce(self):
+#         print("hello,i am a student")
+
+# class Teacher(person):
+#     def introduce(self):
+#         print("Hello, I am a teacher.")
+
+
+# # Creating Objects
+# p = person()
+# s = student()
+# t = Teacher()
+
+# # Calling Methods
+# p.introduce()
+# s.introduce()
+# t.introduce()
+
+
+# que :- create a parent class device with method power_on override with the laptop and mobile
+
+# Parent Class
+# class Device:
+#     def power_on(self):
+#         print("Device is powering on...")
+
+
+# # Child Class - Laptop
+# class Laptop(Device):
+#     def power_on(self):
+#         print("Laptop is starting with operating system...")
+
+
+# # Child Class - Mobile
+# class Mobile(Device):
+#     def power_on(self):
+#         print("Mobile is booting with mobile interface...")
+
+
+# # Objects
+# d = Device()
+# l = Laptop()
+# m = Mobile()
+
+# # Calling Methods
+# d.power_on()
+# l.power_on()
+# m.power_on()
+
+
+# Que:- create a parent class bank with method calculate_intrest.
+# savingsbank
+# current Acc
+# fixeddeposite
+
+# Parent Class
+# class Bank:
+#     def calculate_interest(self):
+#         print("Calculating Bank Interest...")
+
+
+# # Child Class - Savings Bank
+# class SavingsBank(Bank):
+#     def calculate_interest(self):
+#         balance = 10000
+#         rate = 4   # 4% interest
+#         interest = (balance * rate) / 100
+#         print("Savings Bank Interest =", interest)
+
+
+# # Child Class - Current Account
+# class CurrentAccount(Bank):
+#     def calculate_interest(self):
+#         print("Current Account usually has 0% Interest")
+
+
+# # Child Class - Fixed Deposit
+# class FixedDeposit(Bank):
+#     def calculate_interest(self):
+#         principal = 50000
+#         rate = 7   # 7% interest
+#         time = 2   # 2 years
+#         interest = (principal * rate * time) / 100
+#         print("Fixed Deposit Interest =", interest)
+
+
+# # Objects
+# s = SavingsBank()
+# c = CurrentAccount()
+# f = FixedDeposit()
+
+# # Method Calling
+# s.calculate_interest()
+# c.calculate_interest()
+# f.calculate_interest()
+
+
+
+
+
+# -----------------------------------------------------------------
+# Que. what is abstraction???
+# abstraction :- Important cheez dikhana + unnecessary details hide karna
+# Abstraction in Python is a core principle of Object-Oriented Programming (OOP) used to
+# hide unnecessary implementation details 
+# and show only essential features. 
+
+# 1. focus on what object does,not how it does it.
+# 2. achieved via abstract base classes (ABCs) and abstract methods.
+# 3. cannot be instantied.
+# 4. enforces Consistency.
+
+# from abc import ABC,abstractmethod
+
+# # abstract base class 
+# class vehicle(ABC):
+#     @abstractmethod
+#     def start(self):
+#         pass
+# class car(vehicle):
+#     def stop(self):
+#     #    print('the car starta with key')
+# car()
+
+
+# class vehicle(ABC):
+#     @abstractmethod
+#     def start(self):
+#         print('the car starts!')
+#         @abstractmethod
+#     def stop(self):
+#         print('the car stops')
+# class BMW(vehicle):
+#     def start(self):
+#         print('BMW starts!')
+#     def stop(self):
+#         print('BMW stops!')
+# car = BMW()
+# car.start()
+# car.stop()
+    
+
+
+# make a class of paymentsystem
+# class paymentsystem(ABC):
+#     @abstractmethod
+#     def pay(self):
+#         print('the payment completed succesfully!')
+# # credit ,debit,upi,paytm
+# class creditcard(paymentsystem):
+#     def pay(self):
+#         print('the payment has been done by the credit card!')
+# class debitcard(paymentsystem):
+#     def pay(self):
+#         print('the payment has been done by the debit card!')
+# class paytm(paymentsystem):
+#     def pay(self):
+#         print('the payment has been done by the paytm!')
+
+
+# Que :- create a abstract class transportservice
+#book_ticket
+#cancel_ticket
+
+# flight, train , bus
+
+
+# class CreditCard:
+#     def pay(self):
+#         print('the payment has been done by the credit card!')
+
+
+# class DebitCard:
+#     def pay(self):
+#         print('the payment has been done by the debit card!')
+
+
+# class UPI:
+#     def pay(self):
+#         print('the payment has been done by the UPI!')
+
+
+# class Paytm:
+#     def pay(self):
+#         print('the payment has been done by the paytm!')
+
+
+# # Test karne ke liye (optional, lekin helpful)
+# credit = CreditCard()
+# debit = DebitCard()
+# upi = UPI()
+# paytm = Paytm()
+
+# credit.pay()
+# debit.pay()
+# upi.pay()
+# paytm.pay()
