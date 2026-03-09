@@ -1,0 +1,121 @@
+# -------------------------------
+# 1. What is a String?
+# -------------------------------
+s1 = "Hello"
+s2 = 'Python'
+s3 = "123@abc"
+print(s1, s2, s3)
+
+
+# -------------------------------
+# 2. String Immutability
+# -------------------------------
+s = "hello"
+s = "H" + s[1:]
+print("Immutable example:", s)
+
+
+# # -------------------------------
+# # 3. Indexing
+# # -------------------------------
+s = "Python"
+print("First char:", s[0])
+print("Last char:", s[-1])
+
+
+# # -------------------------------
+# # 4. Slicing
+# # -------------------------------
+s = "HelloWorld"
+print(s[0:5])     # Hello
+print(s[5:])      # World
+print(s[:5])      # Hello
+print(s[::2])     # HloWrd
+
+
+# # -------------------------------
+# # 5. Length of string
+# # -------------------------------
+s = "Hello"
+print(len(s))
+
+# Without len()
+count = 0
+for ch in s:
+    count += 1
+print("Length without len():", count)
+
+
+# # -------------------------------
+# # 6. Useful Methods
+# # -------------------------------
+s = "  Hello World  "
+print(s.lower())
+print(s.upper())
+print(s.strip())
+print(s.replace("o", "0"))
+print(s.split())
+
+# # -------------------------------
+# # 7. isdigit(), isalpha(), isalnum()
+# # -------------------------------
+print("123".isdigit())
+print("hello".isalpha())
+print("abc123".isalnum())
+
+
+# # -------------------------------
+# # 8. Concatenation & Repetition
+# # -------------------------------
+name = "Gungun"
+print("Hello " + name)
+print("Hi " * 3)
+
+# # -------------------------------
+# # 9. Loop through string
+# # -------------------------------
+for ch in "Python":
+    print(ch)
+
+
+# # -------------------------------
+# # 10. Count vowels
+# # -------------------------------
+s = "education"
+v = 0
+for ch in s:
+    if ch in "aeiouAEIOU":
+        v += 1
+print("Vowels:", v)
+# # -------------------------------
+# # 11. Reverse string
+# # -------------------------------
+s = "Python"
+print(s[::-1])
+
+
+# # -------------------------------
+# # 12. Palindrome check
+# # -------------------------------
+s = "madam"
+print("Palindrome" if s == s[::-1] else "Not Palindrome")
+
+
+# # -------------------------------
+# # 13. Swapcase
+# # -------------------------------
+print("HeLLo".swapcase())
+
+
+# # -------------------------------
+# # 14. Remove spaces
+# # -------------------------------
+s = "Hello World"
+print(s.replace(" ", ""))
+
+
+# # -------------------------------
+# # 15. ASCII values
+# # -------------------------------
+print(ord('A'))   # 65
+print(chr(90))    # Z
