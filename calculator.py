@@ -1,63 +1,56 @@
 def add(x, y):
-    """Adds two numbers."""
+    """Adds two numbers"""
     return x + y
 
 def subtract(x, y):
-    """Subtracts two numbers."""
+    """Subtracts two numbers"""
     return x - y
 
 def multiply(x, y):
-    """Multiplies two numbers."""
+    """Multiplies two numbers"""
     return x * y
 
 def divide(x, y):
-    """Divides two numbers, handling division by zero."""
+    """Divides two numbers"""
     if y == 0:
-        return "Error: Division by zero is not allowed."
+        return "Error! Division by zero."
     return x / y
 
-def power(x, y):
-    """Calculates x raised to the power y."""
-    return x ** y
-
 def main():
-    print("Welcome to the Simple Calculator!")
-    print("Select an operation:")
+    print("Welcome to Simple Calculator!")
+    print("Select operation:")
     print("1. Add")
     print("2. Subtract")
     print("3. Multiply")
     print("4. Divide")
-    print("5. Power")
-    print("6. Exit")
 
     while True:
-        choice = input("\nEnter choice (1/2/3/4/5/6): ")
+        choice = input("Enter choice (1/2/3/4): ")
 
-        if choice == '6':
-            print("Exiting the calculator. Goodbye!")
-            break
-
-        if choice in ('1', '2', '3', '4', '5'):
+        if choice in ('1', '2', '3', '4'):
             try:
                 num1 = float(input("Enter first number: "))
                 num2 = float(input("Enter second number: "))
             except ValueError:
-                print("Invalid input. Please enter numerical values.")
+                print("Invalid input. Please enter a valid number.")
                 continue
 
             if choice == '1':
-                print(f"Result: {num1} + {num2} = {add(num1, num2)}")
+                print(f"{num1} + {num2} = {add(num1, num2)}")
             elif choice == '2':
-                print(f"Result: {num1} - {num2} = {subtract(num1, num2)}")
+                print(f"{num1} - {num2} = {subtract(num1, num2)}")
             elif choice == '3':
-                print(f"Result: {num1} * {num2} = {multiply(num1, num2)}")
+                print(f"{num1} * {num2} = {multiply(num1, num2)}")
             elif choice == '4':
                 result = divide(num1, num2)
-                print(f"Result: {num1} / {num2} = {result}")
-            elif choice == '5':
-                print(f"Result: {num1} ^ {num2} = {power(num1, num2)}")
+                print(f"{num1} / {num2} = {result}")
+            
+            next_calculation = input("Let's do another calculation? (yes/no): ")
+            if next_calculation.lower() not in ('yes', 'y'):
+                print("Exiting calculator. Goodbye!")
+                break
         else:
-            print("Invalid input. Please choose a valid operation.")
+            print("Invalid Input")
 
 if __name__ == "__main__":
     main()
